@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sai Rakshith Muda | AI Engineer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --bg: #0a0a0a;
+            --surface: #141414;
+            --surface-2: #1e1e1e;
+            --border: #2a2a2a;
+            --text: #e5e5e5;
+            --text-muted: #888;
+            --accent: #3b82f6;
+            --accent-glow: rgba(59, 130, 246, 0.15);
+            --green: #22c55e;
+            --orange: #f97316;
+            --purple: #a855f7;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        /* NAV */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(10, 10, 10, 0.85);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+            z-index: 100;
+            padding: 0 2rem;
+        }
+        nav .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 60px;
+        }
+        nav .logo {
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--text);
+            text-decoration: none;
+        }
+        nav .links { display: flex; gap: 2rem; list-style: none; }
+        nav .links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        nav .links a:hover { color: var(--text); }
+
+        /* HERO */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 6rem 2rem 4rem;
+            background: radial-gradient(ellipse at 50% 0%, var(--accent-glow) 0%, transparent 60%);
+        }
+        .hero-content {
+            max-width: 700px;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.5rem;
+        }
+        .hero .tagline {
+            font-size: 1.3rem;
+            color: var(--accent);
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+        .hero .bio {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            line-height: 1.7;
+            margin-bottom: 2rem;
+        }
+        .hero .cta-row {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+        .btn-primary {
+            background: var(--accent);
+            color: #fff;
+        }
+        .btn-primary:hover { background: #2563eb; }
+        .btn-outline {
+            border: 1px solid var(--border);
+            color: var(--text);
+            background: transparent;
+        }
+        .btn-outline:hover { border-color: var(--text-muted); background: var(--surface); }
+
+        /* SECTIONS */
+        section {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 5rem 2rem;
+        }
+        section h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        section .section-sub {
+            color: var(--text-muted);
+            margin-bottom: 3rem;
+            font-size: 1rem;
+        }
+
+        /* PROJECTS */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 1.5rem;
+        }
+        .project-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            transition: all 0.25s;
+            display: flex;
+            flex-direction: column;
+        }
+        .project-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(59, 130, 246, 0.08);
+        }
+        .project-card .tag-row {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 0.75rem;
+        }
+        .tag {
+            font-size: 0.7rem;
+            padding: 0.2rem 0.6rem;
+            border-radius: 20px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .tag-ai { background: rgba(168, 85, 247, 0.15); color: var(--purple); }
+        .tag-devtools { background: rgba(59, 130, 246, 0.15); color: var(--accent); }
+        .tag-fullstack { background: rgba(34, 197, 94, 0.15); color: var(--green); }
+        .tag-web { background: rgba(249, 115, 22, 0.15); color: var(--orange); }
+        .project-card h3 {
+            font-size: 1.15rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        .project-card .desc {
+            color: var(--text-muted);
+            font-size: 0.88rem;
+            line-height: 1.6;
+            flex: 1;
+            margin-bottom: 1rem;
+        }
+        .project-card .tech {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+        }
+        .project-card .card-links {
+            display: flex;
+            gap: 1rem;
+        }
+        .project-card .card-links a {
+            font-size: 0.85rem;
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .project-card .card-links a:hover { text-decoration: underline; }
+
+        /* SKILLS */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+        .skill-group {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+        }
+        .skill-group h3 {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--text-muted);
+            margin-bottom: 0.75rem;
+        }
+        .skill-group .items {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        .skill-group .items span {
+            background: var(--surface-2);
+            border: 1px solid var(--border);
+            padding: 0.35rem 0.75rem;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        /* EXPERIENCE */
+        .exp-item {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        .exp-item h3 { font-size: 1.1rem; margin-bottom: 0.25rem; }
+        .exp-item .meta {
+            color: var(--text-muted);
+            font-size: 0.88rem;
+            margin-bottom: 0.5rem;
+        }
+        .exp-item p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* CERTIFICATIONS */
+        .certs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1rem;
+        }
+        .cert-item {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 1rem 1.25rem;
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+        .cert-icon {
+            font-size: 1.5rem;
+            min-width: 40px;
+            text-align: center;
+        }
+        .cert-item .cert-name {
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        .cert-item .cert-issuer {
+            color: var(--text-muted);
+            font-size: 0.8rem;
+        }
+
+        /* CONTACT / FOOTER */
+        .contact {
+            text-align: center;
+            padding: 4rem 2rem;
+            border-top: 1px solid var(--border);
+        }
+        .contact h2 { margin-bottom: 1rem; }
+        .contact p { color: var(--text-muted); margin-bottom: 2rem; }
+        .contact .social-links {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+        }
+        .contact .social-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+        .contact .social-links a:hover { color: var(--accent); }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-muted);
+            font-size: 0.8rem;
+            border-top: 1px solid var(--border);
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.2rem; }
+            .hero .tagline { font-size: 1.1rem; }
+            nav .links { gap: 1rem; }
+            nav .links a { font-size: 0.8rem; }
+            .projects-grid { grid-template-columns: 1fr; }
+            .skills-grid { grid-template-columns: 1fr; }
+            .certs-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <div class="container">
+        <a href="#" class="logo">Sai Rakshith Muda</a>
+        <ul class="links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#certs">Certifications</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero" id="about">
+    <div class="hero-content">
+        <h1>Sai Rakshith Muda</h1>
+        <div class="tagline">AI Tooling &middot; Agentic Systems &middot; Developer Tools</div>
+        <p class="bio">
+            CS new grad from Penn State (May 2026). I build developer tools for the AI era &mdash;
+            from behavioral testing frameworks for LLM agents to automated incident triage pipelines.
+            7 open-source projects. 200+ tests. Fluent in Python, TypeScript, Dart, Swift, and C.
+        </p>
+        <div class="cta-row">
+            <a href="https://github.com/rakshithmuda22" class="btn btn-primary">GitHub</a>
+            <a href="mailto:szm6607@psu.edu" class="btn btn-outline">szm6607@psu.edu</a>
+            <a href="#projects" class="btn btn-outline">View Projects</a>
+        </div>
+    </div>
+</div>
+
+<!-- PROJECTS -->
+<section id="projects">
+    <h2>Projects</h2>
+    <p class="section-sub">Open-source tools I've built &mdash; each with tests, CI/CD, and documentation.</p>
+
+    <div class="projects-grid">
+
+        <div class="project-card">
+            <div class="tag-row">
+                <span class="tag tag-ai">AI Testing</span>
+                <span class="tag tag-devtools">DevTools</span>
+            </div>
+            <h3>AgentSpec</h3>
+            <p class="desc">pytest-style behavioral contracts for LLM agents. Enforces deterministic pass/fail assertions on tool-call sequences &mdash; must_call, must_call_before, must_not_call, must_call_at_most. Runs offline in &lt;50ms, zero API keys.</p>
+            <div class="tech">Python &middot; Pydantic &middot; pytest &middot; 48 tests</div>
+            <div class="card-links">
+                <a href="https://github.com/rakshithmuda22/agentspec">GitHub</a>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <div class="tag-row">
+                <span class="tag tag-ai">Multi-Agent</span>
+                <span class="tag tag-devtools">GitHub Action</span>
+            </div>
+            <h3>AgentProbe</h3>
+            <p class="desc">Multi-agent code governance system using LangGraph. 3 specialized agents (Architecture, Pattern, Regression) evaluate PRs against boundaries and semantic invariants with weighted scoring and auto-BLOCK.</p>
+            <div class="tech">Python &middot; LangGraph &middot; LangChain &middot; FastAPI &middot; 86 tests</div>
+            <div class="card-links">
+                <a href="https://github.com/rakshithmuda22/agentprobe">GitHub</a>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <div class="tag-row">
+                <span class="tag tag-devtools">DevOps</span>
+                <span class="tag tag-ai">Automation</span>
+            </div>
+            <h3>Stacktrace-to-PR Time Machine</h3>
+            <p class="desc">Traces Sentry stack frames to the exact PR that introduced the bug via GitHub GraphQL blame API. Fully stateless, AST-aware function-boundary blame, 30-day SHA-aware Redis caching. Posts to Slack in seconds.</p>
+            <div class="tech">Python &middot; FastAPI &middot; GitHub GraphQL &middot; Redis &middot; Slack API</div>
+            <div class="card-links">
+                <a href="https://github.com/rakshithmuda22/stacktrace-time-machine">GitHub</a>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <div class="tag-row">
+                <span class="tag tag-ai">AI Agents</span>
+                <span class="tag tag-devtools">Code Review</span>
+            </div>
+            <h3>CodeSage</h3>
+            <p class="desc">4 parallel AI agents (BugDetector, SecurityScanner, StyleAdvisor, TestCoverage) review PRs via asyncio.gather(). Learns conventions from past merged PRs. Posts inline GitHub comments at exact diff positions.</p>
+            <div class="tech">Python &middot; FastAPI &middot; Groq &middot; Redis &middot; RQ &middot; tree-sitter</div>
+            <div class="card-links">
+                <a href="https://github.com/rakshithmuda22/codesage">GitHub</a>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <div class="tag-row">
+                <span class="tag tag-ai">Claude API</span>
+                <span class="tag tag-fullstack">Social Impact</span>
+            </div>
+            <h3>InformalID</h3>
+            <p class="desc">AI financial profiler for India's 490M informal workers. Conducts a 7-question interview via Claude tool_use, generates structured financial identity cards. Two-call architecture with Pydantic validation and 2026 government scheme matching.</p>
+            <div class="tech">Python &middot; Claude API (tool_use) &middot; Pydantic</div>
+            <div class="card-links">
+                <a href="https://github.com/rakshithmuda22/informalid">GitHub</a>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <div class="tag-row">
+                <span class="tag tag-ai">RAG</span>
+                <span class="tag tag-fullstack">Full Stack</span>
+            </div>
+            <h3>DocuMind</h3>
+            <p class="desc">RAG chatbot with source citations and confidence scoring. Paragraph-aware chunking, per-session vector isolation, follow-up detection. No LangChain &mdash; entire RAG pipeline written from scratch.</p>
+            <div class="tech">Python &middot; FastAPI &middot; ChromaDB &middot; Groq &middot; sentence-transformers</div>
+            <div class="card-links">
+                <a href="https://github.com/rakshithmuda22/Documind">GitHub</a>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <div class="tag-row">
+                <span class="tag tag-fullstack">Mobile</span>
+                <span class="tag tag-ai">Claude API</span>
+            </div>
+            <h3>VitalMaa</h3>
+            <p class="desc">India-focused AI health companion. Flutter app with Claude-powered AI coach (Vaidya) supporting Hindi/English/Telugu. 15+ Supabase Edge Functions, Cloudflare Worker proxy, 500+ Indian food database.</p>
+            <div class="tech">Flutter &middot; Supabase &middot; Claude API &middot; Cloudflare Workers &middot; Firebase</div>
+            <div class="card-links">
+                <a href="https://github.com/rakshithmuda22/vitalmaa">GitHub (Private)</a>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <div class="tag-row">
+                <span class="tag tag-web">PWA</span>
+                <span class="tag tag-fullstack">React</span>
+            </div>
+            <h3>ZenFlow</h3>
+            <p class="desc">Offline-capable Pomodoro timer PWA with procedural ambient soundscapes (Tone.js), visual heatmap, streak tracking, and Electron desktop app with always-on-top floating timer.</p>
+            <div class="tech">React 19 &middot; TypeScript &middot; Tailwind &middot; Zustand &middot; Electron &middot; Vite</div>
+            <div class="card-links">
+                <a href="https://zenflow-lyart.vercel.app">Live Demo</a>
+                <a href="https://github.com/rakshithmuda22/zenflow">GitHub</a>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+    <h2>Technical Skills</h2>
+    <p class="section-sub">Technologies I use and can defend in a technical interview.</p>
+
+    <div class="skills-grid">
+        <div class="skill-group">
+            <h3>Languages</h3>
+            <div class="items">
+                <span>Python</span>
+                <span>TypeScript</span>
+                <span>Dart</span>
+                <span>Swift</span>
+                <span>C</span>
+                <span>SQL</span>
+            </div>
+        </div>
+        <div class="skill-group">
+            <h3>AI / LLM</h3>
+            <div class="items">
+                <span>Claude API</span>
+                <span>Groq API</span>
+                <span>LangGraph</span>
+                <span>LangChain</span>
+                <span>ChromaDB</span>
+                <span>RAG Pipelines</span>
+            </div>
+        </div>
+        <div class="skill-group">
+            <h3>Backend</h3>
+            <div class="items">
+                <span>FastAPI</span>
+                <span>Flask</span>
+                <span>Supabase</span>
+                <span>Redis</span>
+                <span>PostgreSQL</span>
+                <span>Pydantic</span>
+            </div>
+        </div>
+        <div class="skill-group">
+            <h3>Frontend</h3>
+            <div class="items">
+                <span>Flutter</span>
+                <span>React</span>
+                <span>SwiftUI</span>
+                <span>Tailwind CSS</span>
+                <span>Zustand</span>
+            </div>
+        </div>
+        <div class="skill-group">
+            <h3>Infra / DevOps</h3>
+            <div class="items">
+                <span>Docker</span>
+                <span>GitHub Actions</span>
+                <span>Cloudflare Workers</span>
+                <span>Vercel</span>
+                <span>Deno</span>
+            </div>
+        </div>
+        <div class="skill-group">
+            <h3>Tools</h3>
+            <div class="items">
+                <span>Git</span>
+                <span>tree-sitter</span>
+                <span>asyncio</span>
+                <span>pytest</span>
+                <span>RQ (Redis Queue)</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section id="certs">
+    <h2>Certifications</h2>
+    <p class="section-sub">Formal training that backs the hands-on work.</p>
+
+    <div class="certs-grid">
+        <div class="cert-item">
+            <div class="cert-icon">&#x1F4DC;</div>
+            <div>
+                <div class="cert-name">Introduction to DevOps</div>
+                <div class="cert-issuer">IBM (Coursera) &middot; Jan 2026</div>
+            </div>
+        </div>
+        <div class="cert-item">
+            <div class="cert-icon">&#x1F4DC;</div>
+            <div>
+                <div class="cert-name">Claude 101</div>
+                <div class="cert-issuer">Anthropic Academy</div>
+            </div>
+        </div>
+        <div class="cert-item">
+            <div class="cert-icon">&#x1F4DC;</div>
+            <div>
+                <div class="cert-name">Claude Code in Action</div>
+                <div class="cert-issuer">Anthropic Academy</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+    <h2>Education</h2>
+    <div class="exp-item">
+        <h3>Pennsylvania State University</h3>
+        <div class="meta">B.S. Computer Science &middot; GPA 3.47 &middot; Expected May 2026</div>
+        <p>Coursework: Operating Systems, Artificial Intelligence, Database Management Systems, Communication Networks, Theory of Computation, Discrete Mathematics, Numerical Analysis</p>
+    </div>
+    <div class="exp-item" style="margin-top: 1rem;">
+        <h3>Study Abroad &mdash; Universidad Tecnica Federico Santa Maria</h3>
+        <div class="meta">Santiago, Chile &middot; March 2023</div>
+        <p>Seismic wave analysis research, field-ready microscope construction</p>
+    </div>
+</section>
+
+<!-- CONTACT -->
+<div class="contact" id="contact">
+    <h2>Let's Connect</h2>
+    <p>Looking for AI Engineer / DevTools / SWE roles. Available May 2026.</p>
+    <div class="social-links">
+        <a href="mailto:szm6607@psu.edu">Email</a>
+        <a href="https://github.com/rakshithmuda22">GitHub</a>
+        <a href="tel:+18147801228">(814) 780-1228</a>
+    </div>
+</div>
+
+<footer>
+    &copy; 2026 Sai Rakshith Muda &middot; Built with HTML, CSS, and ambition.
+</footer>
+
+</body>
+</html>
