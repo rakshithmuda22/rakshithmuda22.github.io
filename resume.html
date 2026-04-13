@@ -5,144 +5,117 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sai Rakshith Muda - Resume</title>
     <style>
-        @page {
-            margin: 0.5in 0.6in;
-            size: letter;
-        }
+        @page { margin: 0.5in; size: letter; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
-            font-family: 'Times New Roman', Georgia, serif;
+            font-family: Garamond, 'Times New Roman', Georgia, serif;
             font-size: 10.5pt;
-            line-height: 1.35;
-            color: #111;
+            line-height: 1.4;
+            color: #1a1a1a;
             max-width: 8.5in;
             margin: 0 auto;
-            padding: 0.5in 0.6in;
+            padding: 0.5in 0.55in;
             background: #fff;
         }
+        a { color: #1a1a1a; text-decoration: none; }
+        a:hover { text-decoration: underline; }
 
-        /* HEADER */
-        .header { text-align: center; margin-bottom: 6pt; }
-        .header h1 {
-            font-size: 18pt;
-            font-weight: bold;
-            letter-spacing: 1pt;
-            margin-bottom: 3pt;
-        }
-        .header .contact {
-            font-size: 10pt;
-            color: #333;
-        }
-        .header .contact a { color: #333; text-decoration: none; }
-        .header .contact a:hover { text-decoration: underline; }
+        /* Header */
+        .header { text-align: center; padding-bottom: 4pt; border-bottom: 1.5pt solid #1a1a1a; margin-bottom: 6pt; }
+        .header h1 { font-size: 20pt; font-weight: bold; letter-spacing: 2pt; text-transform: uppercase; margin-bottom: 4pt; }
+        .header .contact { font-size: 10pt; }
+        .header .contact .sep { margin: 0 4pt; }
 
-        /* SECTION */
-        .section { margin-top: 8pt; }
+        /* Sections */
+        .section { margin-top: 7pt; }
         .section-title {
-            font-size: 11pt;
+            font-size: 10.5pt;
             font-weight: bold;
             text-transform: uppercase;
-            letter-spacing: 0.5pt;
-            border-bottom: 1.5pt solid #111;
+            letter-spacing: 1pt;
+            border-bottom: 0.75pt solid #1a1a1a;
             padding-bottom: 1pt;
             margin-bottom: 4pt;
         }
 
-        /* EDUCATION */
-        .edu-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
+        /* Two-column rows */
+        .row { display: flex; justify-content: space-between; align-items: baseline; }
+        .row .left { font-weight: bold; }
+        .row .right { font-style: italic; font-size: 10pt; text-align: right; white-space: nowrap; }
+        .row-sub { display: flex; justify-content: space-between; align-items: baseline; }
+        .row-sub .left { font-style: italic; }
+        .row-sub .right { font-size: 10pt; }
+
+        /* Bullets */
+        ul { padding-left: 14pt; margin-top: 2pt; margin-bottom: 2pt; }
+        li { margin-bottom: 1.5pt; font-size: 10.2pt; line-height: 1.35; }
+
+        /* Skills */
+        .skills-line { margin-bottom: 1pt; font-size: 10.2pt; }
+        .skills-line strong { font-size: 10.2pt; }
+
+        /* Project block */
+        .project { margin-bottom: 5pt; }
+        .project-title { display: flex; justify-content: space-between; align-items: baseline; }
+        .project-title .name { font-weight: bold; font-size: 10.5pt; }
+        .project-title .tech { font-style: italic; font-size: 9.5pt; }
+        .project-link { font-size: 9pt; color: #555; }
+
+        /* Compact certs */
+        .cert-list { padding-left: 14pt; }
+        .cert-list li { font-size: 10pt; margin-bottom: 1pt; }
+
+        /* Print */
+        @media print { body { padding: 0; } a { color: #1a1a1a !important; } .no-print { display: none; } }
+
+        /* Screen-only banner */
+        .print-banner {
+            text-align: center; background: #f5f7fa; padding: 8px 16px;
+            border-radius: 6px; margin-bottom: 12px;
+            font-family: -apple-system, sans-serif; font-size: 13px; color: #555;
         }
-        .edu-row .school { font-weight: bold; }
-        .edu-row .date { font-style: italic; }
-        .edu-detail { font-style: italic; margin-bottom: 2pt; }
-        .coursework { margin-top: 1pt; font-size: 10pt; }
-
-        /* SKILLS */
-        .skills-line { margin-bottom: 1pt; }
-        .skills-line strong { font-size: 10pt; }
-
-        /* PROJECTS */
-        .project { margin-bottom: 6pt; }
-        .project-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-        }
-        .project-header .name { font-weight: bold; }
-        .project-header .tech { font-style: italic; font-size: 10pt; }
-        .project-link { font-size: 9.5pt; color: #444; }
-        .project-link a { color: #444; text-decoration: none; }
-        ul { padding-left: 16pt; margin-top: 1pt; }
-        li { margin-bottom: 1pt; font-size: 10.2pt; }
-
-        /* EXPERIENCE */
-        .exp { margin-bottom: 5pt; }
-        .exp-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-        }
-        .exp-header .title { font-weight: bold; }
-        .exp-header .date { font-style: italic; }
-        .exp-org { font-style: italic; }
-
-        /* CERTS */
-        .cert-list { padding-left: 16pt; }
-        .cert-list li { margin-bottom: 1pt; font-size: 10pt; }
-
-        /* PRINT */
-        @media print {
-            body { padding: 0; }
-            a { color: #111 !important; }
-        }
-
-        /* SCREEN: download hint */
-        .download-hint {
-            text-align: center;
-            background: #f0f4ff;
-            padding: 8px 16px;
-            border-radius: 6px;
-            margin-bottom: 16px;
-            font-family: -apple-system, sans-serif;
-            font-size: 13px;
-            color: #555;
-        }
-        .download-hint a { color: #2563eb; }
-        @media print { .download-hint { display: none; } }
+        .print-banner a { color: #2563eb; text-decoration: underline; }
+        @media print { .print-banner { display: none; } }
     </style>
 </head>
 <body>
 
-<div class="download-hint">
-    To save as PDF: Press <strong>Cmd + P</strong> (Mac) or <strong>Ctrl + P</strong> (Windows), then select "Save as PDF".
-    <a href="index.html">Back to Portfolio</a>
+<div class="print-banner no-print">
+    Save as PDF: <strong>Cmd+P</strong> (Mac) or <strong>Ctrl+P</strong> (Windows) then "Save as PDF"
+    &nbsp;|&nbsp; <a href="index.html">Back to Portfolio</a>
 </div>
 
+<!-- ========== HEADER ========== -->
 <div class="header">
-    <h1>SAI RAKSHITH MUDA</h1>
+    <h1>Sai Rakshith Muda</h1>
     <div class="contact">
-        State College, PA |
-        <a href="mailto:rakshithmuda@gmail.com">rakshithmuda@gmail.com</a> |
-        (814) 780-1228 |
-        <a href="https://github.com/rakshithmuda22">github.com/rakshithmuda22</a> |
+        State College, PA
+        <span class="sep">|</span>
+        <a href="mailto:rakshithmuda@gmail.com">rakshithmuda@gmail.com</a>
+        <span class="sep">|</span>
+        (814) 780-1228
+        <span class="sep">|</span>
+        <a href="https://github.com/rakshithmuda22">github.com/rakshithmuda22</a>
+        <span class="sep">|</span>
         <a href="https://rakshithmuda22.github.io">rakshithmuda22.github.io</a>
     </div>
 </div>
 
-<!-- EDUCATION -->
+<!-- ========== EDUCATION ========== -->
 <div class="section">
     <div class="section-title">Education</div>
-    <div class="edu-row">
-        <span class="school">Pennsylvania State University</span>
-        <span class="date">Expected May 2026</span>
+    <div class="row">
+        <span class="left">Pennsylvania State University</span>
+        <span class="right">State College, PA</span>
     </div>
-    <div class="edu-detail">Bachelor of Science in Computer Science | GPA: 3.48</div>
-    <div class="coursework"><strong>Coursework:</strong> Operating Systems, Artificial Intelligence, Database Management Systems, Communication Networks, Theory of Computation, Numerical Analysis</div>
+    <div class="row-sub">
+        <span class="left">Bachelor of Science in Computer Science, GPA: 3.48</span>
+        <span class="right">Expected May 2026</span>
+    </div>
+    <div style="font-size: 10pt; margin-top: 2pt;"><strong>Coursework:</strong> Operating Systems, Artificial Intelligence, Database Management Systems, Communication Networks, Theory of Computation, Numerical Analysis</div>
 </div>
 
-<!-- SKILLS -->
+<!-- ========== SKILLS ========== -->
 <div class="section">
     <div class="section-title">Technical Skills</div>
     <div class="skills-line"><strong>Languages:</strong> Python, TypeScript, Dart, Swift, C, SQL</div>
@@ -152,143 +125,141 @@
     <div class="skills-line"><strong>Infrastructure:</strong> Docker, GitHub Actions CI/CD, Cloudflare Workers, Vercel, Deno Edge Functions</div>
 </div>
 
-<!-- PROJECTS -->
+<!-- ========== PROJECTS ========== -->
 <div class="section">
     <div class="section-title">Projects</div>
 
     <div class="project">
-        <div class="project-header">
+        <div class="project-title">
             <span class="name">AgentSpec - Behavioral Contract Library for LLM Agents</span>
-            <span class="tech">Python, Pydantic, pytest</span>
+            <span class="tech">Python, pytest</span>
         </div>
-        <div class="project-link"><a href="https://github.com/rakshithmuda22/agentspec">github.com/rakshithmuda22/agentspec</a></div>
+        <div class="project-link"><a href="https://pypi.org/project/llm-agentspec/">pypi.org/project/llm-agentspec</a> | <a href="https://github.com/rakshithmuda22/agentspec">GitHub</a></div>
         <ul>
-            <li>Built a Python library that enforces structural contracts on LLM agent tool-call sequences (must_call, must_call_before, must_not_call, must_call_at_most), filling a gap where tools like DeepEval and RAGAS grade output quality but cannot do deterministic behavioral pass/fail</li>
-            <li>Designed framework-agnostic AgentSession abstraction accepting traces from Anthropic tool_use, LangSmith, or OpenTelemetry; runs offline in under 50ms with zero API keys</li>
-            <li>Integrated with pytest via single report.assert_all_pass() method; 48 tests passing in CI</li>
+            <li>Published to PyPI as an open-source library that enforces structural contracts on LLM agent tool-call sequences, filling a gap where tools like DeepEval grade output quality but cannot do deterministic behavioral pass/fail</li>
+            <li>Achieved 296K ops/sec throughput with zero dependencies; 73 tests passing, thread-safe across 20 concurrent workers</li>
         </ul>
     </div>
 
     <div class="project">
-        <div class="project-header">
+        <div class="project-title">
             <span class="name">AgentProbe - Multi-Agent Code Governance System</span>
             <span class="tech">Python, LangGraph, FastAPI</span>
         </div>
         <div class="project-link"><a href="https://github.com/rakshithmuda22/agentprobe">github.com/rakshithmuda22/agentprobe</a></div>
         <ul>
-            <li>Engineered a GitHub Action with 3 specialized agents (Architecture, Pattern, Regression) orchestrated via LangGraph DAG to evaluate PRs against architectural boundaries and semantic invariants</li>
-            <li>Implemented 3-layer regression detection with configurable weighted scoring (40/25/35) and automatic BLOCK on boundary violations; 86 tests covering all agents and HMAC-verified webhooks</li>
+            <li>Engineered a GitHub Action with 3 specialized agents orchestrated via LangGraph DAG, evaluating PRs against architectural boundaries with weighted scoring and automatic BLOCK on violations; 86 tests</li>
         </ul>
     </div>
 
     <div class="project">
-        <div class="project-header">
+        <div class="project-title">
             <span class="name">Stacktrace-to-PR Time Machine</span>
             <span class="tech">Python, FastAPI, GitHub GraphQL, Redis</span>
         </div>
         <div class="project-link"><a href="https://github.com/rakshithmuda22/stacktrace-time-machine">github.com/rakshithmuda22/stacktrace-time-machine</a></div>
         <ul>
-            <li>Built a stateless webhook service that traces Sentry stack frames to the exact PR via GitHub GraphQL blame API, reducing incident triage time from 15-30 minutes to under 3 seconds</li>
-            <li>Implemented AST-aware function-boundary blame for Python files and 30-day SHA-aware Redis caching; posts enriched context to Slack via Block Kit</li>
+            <li>Built a stateless webhook service that traces Sentry stack frames to the exact PR via GitHub GraphQL blame API with AST-aware function-boundary analysis and 30-day SHA-aware Redis caching</li>
         </ul>
     </div>
 
     <div class="project">
-        <div class="project-header">
+        <div class="project-title">
             <span class="name">CodeSage - 4-Agent Parallel Code Reviewer</span>
             <span class="tech">Python, FastAPI, Groq, Redis, tree-sitter</span>
         </div>
         <div class="project-link"><a href="https://github.com/rakshithmuda22/codesage">github.com/rakshithmuda22/codesage</a></div>
         <ul>
-            <li>Built 4 AI agents (BugDetector, SecurityScanner, StyleAdvisor, TestCoverage) running in parallel via asyncio.gather(), posting inline GitHub comments at exact diff positions</li>
-            <li>Implemented convention learning from past merged PRs, cross-agent deduplication, GitHub App JWT auth, and tree-sitter AST parsing across Python, JavaScript, and TypeScript</li>
+            <li>Built 4 AI agents running in parallel via asyncio.gather() that learn repo conventions from past PRs, deduplicate findings across agents, and post inline GitHub comments at exact diff positions</li>
         </ul>
     </div>
 
     <div class="project">
-        <div class="project-header">
-            <span class="name">InformalID - AI Financial Profiler</span>
+        <div class="project-title">
+            <span class="name">InformalID - AI Financial Profiler for India's Informal Workers</span>
             <span class="tech">Python, Claude API (tool_use), Pydantic</span>
         </div>
         <div class="project-link"><a href="https://github.com/rakshithmuda22/informalid">github.com/rakshithmuda22/informalid</a></div>
         <ul>
-            <li>Built a conversational AI system generating financial identity cards for India's 490M informal workers through a 7-question Claude tool_use interview with forced tool choice and Pydantic validation</li>
-            <li>Integrated 2026 government scheme matching (PM SVANidhi, MUDRA, Jan Dhan) with JAM Trinity scoring</li>
+            <li>Built a conversational AI generating financial identity cards for 490M cash-only workers via Claude tool_use with forced tool choice, Pydantic validation, and 2026 government scheme matching</li>
         </ul>
     </div>
 
     <div class="project">
-        <div class="project-header">
+        <div class="project-title">
             <span class="name">DocuMind - RAG Chatbot with Source Citations</span>
             <span class="tech">Python, FastAPI, ChromaDB, Groq</span>
         </div>
         <div class="project-link"><a href="https://github.com/rakshithmuda22/Documind">github.com/rakshithmuda22/Documind</a></div>
         <ul>
-            <li>Built end-to-end RAG pipeline from scratch (no LangChain): PDF parsing, paragraph-aware chunking, all-MiniLM-L6-v2 embeddings, ChromaDB vector search, Groq LLaMA 3.1 generation with per-session isolation and confidence scoring</li>
+            <li>Built end-to-end RAG pipeline from scratch (no LangChain): paragraph-aware chunking, all-MiniLM-L6-v2 embeddings, per-session vector isolation, confidence scoring, deployed to Hugging Face Spaces</li>
         </ul>
     </div>
 
     <div class="project">
-        <div class="project-header">
+        <div class="project-title">
             <span class="name">VitalMaa - AI Health Companion</span>
-            <span class="tech">Flutter, Supabase, Claude API, Cloudflare</span>
+            <span class="tech">Flutter, Supabase, Claude API, Cloudflare Workers</span>
         </div>
         <ul>
-            <li>Developed a Flutter health app with Claude-powered AI coach supporting Hindi/English/Telugu, 15+ Supabase Edge Functions, Cloudflare Worker proxy, 500+ Indian food database, and HealthKit integration</li>
+            <li>Developed a Flutter health app with Claude-powered AI coach supporting Hindi/English/Telugu, 15+ Supabase Edge Functions, 500+ Indian food database, and HealthKit/Health Connect integration</li>
         </ul>
     </div>
 
     <div class="project">
-        <div class="project-header">
-            <span class="name">Pizza Palace - Online Ordering System</span>
+        <div class="project-title">
+            <span class="name">Pizza Palace - Full-Stack Ordering System</span>
             <span class="tech">Python, Flask, MySQL | Team Project</span>
         </div>
         <ul>
-            <li>Built a full-stack ordering system with customer auth, cart, checkout, order tracking, employee dashboard, and admin panel; designed 10+ normalized MySQL tables with proper constraints</li>
+            <li>Built a full-stack ordering system with customer auth, cart, checkout, order tracking, employee dashboard, and admin panel; designed 10+ normalized MySQL tables with proper foreign key constraints</li>
         </ul>
     </div>
 </div>
 
-<!-- EXPERIENCE -->
+<!-- ========== EXPERIENCE ========== -->
 <div class="section">
     <div class="section-title">Experience</div>
-
-    <div class="exp">
-        <div class="exp-header">
-            <span class="title">Mathematics Department Proctor</span>
-            <span class="date">Mar 2024 - Present</span>
-        </div>
-        <div class="exp-org">Penn State University, State College, PA</div>
-        <ul>
-            <li>Manage exam logistics and maintain secure testing environments for 500+ students per semester; verify identities and handle confidential examination materials</li>
-        </ul>
+    <div class="row">
+        <span class="left">Mathematics Department Proctor</span>
+        <span class="right">Mar 2024 - Present</span>
     </div>
+    <div class="row-sub">
+        <span class="left">Penn State University, State College, PA</span>
+        <span class="right"></span>
+    </div>
+    <ul>
+        <li>Manage exam logistics and maintain secure testing environments for 500+ students per semester; verify identities and handle confidential examination materials</li>
+    </ul>
 
-    <div class="exp">
-        <div class="exp-header">
-            <span class="title">Commons Desk Operations</span>
-            <span class="date">Mar 2024 - Present</span>
+    <div style="margin-top: 4pt;">
+        <div class="row">
+            <span class="left">Commons Desk Operations</span>
+            <span class="right">Mar 2024 - Present</span>
         </div>
-        <div class="exp-org">Penn State University, State College, PA</div>
+        <div class="row-sub">
+            <span class="left">Penn State University, State College, PA</span>
+            <span class="right"></span>
+        </div>
         <ul>
             <li>Earned Employee of the Month recognition; manage student information systems and enforce security protocols for residential facilities</li>
         </ul>
     </div>
 </div>
 
-<!-- CERTIFICATIONS -->
+<!-- ========== CERTIFICATIONS ========== -->
 <div class="section">
     <div class="section-title">Certifications</div>
     <ul class="cert-list">
+        <li><strong>llm-agentspec</strong> - Published to PyPI (<a href="https://pypi.org/project/llm-agentspec/">pypi.org/project/llm-agentspec</a>)</li>
         <li><strong>Introduction to DevOps</strong> - IBM (Coursera), Jan 2026</li>
-        <li><strong>Claude 101</strong> - Anthropic Academy</li>
-        <li><strong>Claude Code in Action</strong> - Anthropic Academy</li>
+        <li><strong>Claude 101</strong> &amp; <strong>Claude Code in Action</strong> - Anthropic Academy</li>
     </ul>
 </div>
 
-<!-- LEADERSHIP + LANGUAGES -->
+<!-- ========== ACTIVITIES ========== -->
 <div class="section">
-    <div class="section-title">Leadership & Languages</div>
+    <div class="section-title">Leadership &amp; Languages</div>
     <ul>
         <li><strong>Penn State Habitat for Humanity</strong> - Collegiate Challenge 2024, Fort Lauderdale, FL</li>
         <li><strong>Study Abroad</strong> - Universidad Tecnica Federico Santa Maria, Santiago, Chile (Mar 2023)</li>
