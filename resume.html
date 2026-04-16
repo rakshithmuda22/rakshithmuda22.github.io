@@ -10,8 +10,8 @@
         html, body { height: auto; }
         body {
             font-family: Garamond, 'Times New Roman', Georgia, serif;
-            font-size: 10.5pt;
-            line-height: 1.18;
+            font-size: 11pt;
+            line-height: 1.26;
             color: #1a1a1a;
             max-width: 8.5in;
             margin: 0 auto;
@@ -19,20 +19,20 @@
             background: #fff;
         }
         a { color: #1a1a1a; text-decoration: none; }
-        .header { text-align: center; padding-bottom: 3pt; border-bottom: 1.2pt solid #000; margin-bottom: 5pt; }
-        .header h1 { font-size: 18pt; font-weight: bold; letter-spacing: 2.5pt; text-transform: uppercase; margin-bottom: 1pt; }
-        .header .contact { font-size: 9.5pt; }
-        .section { margin-top: 5pt; }
-        .section-title { font-size: 10.5pt; font-weight: bold; text-transform: uppercase; letter-spacing: 1pt; border-bottom: 0.6pt solid #000; padding-bottom: 1pt; margin-bottom: 2pt; }
+        .header { text-align: center; padding-bottom: 4pt; border-bottom: 1.2pt solid #000; margin-bottom: 6pt; }
+        .header h1 { font-size: 19pt; font-weight: bold; letter-spacing: 3pt; text-transform: uppercase; margin-bottom: 2pt; }
+        .header .contact { font-size: 10pt; }
+        .section { margin-top: 7pt; }
+        .section-title { font-size: 11pt; font-weight: bold; text-transform: uppercase; letter-spacing: 1.2pt; border-bottom: 0.7pt solid #000; padding-bottom: 1.5pt; margin-bottom: 3pt; }
         .row { display: flex; justify-content: space-between; align-items: baseline; gap: 8pt; }
         .bold { font-weight: bold; }
         .italic { font-style: italic; }
-        .small { font-size: 9.5pt; white-space: nowrap; }
-        ul { padding-left: 13pt; margin: 1pt 0 0 0; }
-        li { margin-bottom: 0.5pt; font-size: 10pt; line-height: 1.2; }
-        .skills-line { margin-bottom: 0.5pt; font-size: 10pt; line-height: 1.2; }
-        .proj { margin-bottom: 3pt; }
-        .edu-line { font-size: 9.8pt; line-height: 1.2; }
+        .small { font-size: 10pt; white-space: nowrap; }
+        ul { padding-left: 14pt; margin: 1.5pt 0 0 0; }
+        li { margin-bottom: 1pt; font-size: 10.5pt; line-height: 1.28; }
+        .skills-line { margin-bottom: 1pt; font-size: 10.5pt; line-height: 1.28; }
+        .proj { margin-bottom: 4pt; }
+        .edu-line { font-size: 10.3pt; line-height: 1.26; }
         @media print { body { padding: 0; } .no-print { display: none !important; } @page { margin: 0.35in 0.45in; } }
         .banner { text-align: center; background: #f0f4ff; padding: 4px; border-radius: 4px; margin-bottom: 6px; font-family: -apple-system, sans-serif; font-size: 11px; color: #666; }
         .banner a { color: #2563eb; }
@@ -108,17 +108,23 @@
 
     <div class="proj">
         <div class="row"><span class="bold">CodeSage &mdash; 4-Agent Parallel Code Reviewer</span><span class="italic small">Python, Groq, Redis, tree-sitter</span></div>
-        <ul><li>Built 4 AI agents running in parallel via <code>asyncio.gather()</code> (BugDetector, SecurityScanner, StyleAdvisor, TestCoverage) with cross-agent deduplication, GitHub App JWT auth (RS256), inline comments at exact diff positions; 38 tests</li></ul>
+        <ul>
+            <li>Built 4 AI agents (BugDetector, SecurityScanner, StyleAdvisor, TestCoverage) running in parallel via <code>asyncio.gather()</code> with a token-bucket rate limiter, cross-agent proximity-based deduplication (O(n&sup2;) clustering within 3 lines), and severity-max merging</li>
+            <li>GitHub App JWT auth (RS256, 10-min expiry, cached installation tokens), inline review comments posted at exact unified-diff positions via GitHub REST; 38 pytest tests, Redis-backed queue with retry logic</li>
+        </ul>
     </div>
 
     <div class="proj">
         <div class="row"><span class="bold">DocuMind &mdash; RAG Chatbot with Citations</span><span class="italic small">Python, FastAPI, ChromaDB, Groq</span></div>
-        <ul><li>Built RAG pipeline from scratch (no LangChain): paragraph-aware chunking, MiniLM embeddings, ChromaDB similarity search, per-session isolation, inline citation rendering; 44 tests, Docker deploy on Hugging Face Spaces</li></ul>
+        <ul>
+            <li>Built RAG pipeline from scratch (no LangChain, no LlamaIndex): paragraph-aware chunking with 500-token buffer + overlap, MiniLM sentence-transformers embeddings, ChromaDB similarity search with per-session collection isolation</li>
+            <li>Inline source-citation rendering in the chat UI, confidence scoring from retrieval distances, 44 pytest tests with full mock coverage, multi-stage Docker build deployed to Hugging Face Spaces with a 3-stage health check</li>
+        </ul>
     </div>
 
     <div class="proj">
         <div class="row"><span class="bold">VitalMaa &mdash; AI Health Companion</span><span class="italic small">Flutter, Supabase, Claude API, Cloudflare</span></div>
-        <ul><li>Developed cross-platform Flutter app with Claude-powered multilingual AI health coach (Hindi / English / Telugu), 15+ Deno Edge Functions, 500+ item Indian food database, Apple HealthKit + Google Health Connect integration</li></ul>
+        <ul><li>Cross-platform Flutter app with Claude-powered multilingual AI health coach (Hindi / English / Telugu), 15+ Deno Edge Functions on Supabase, 500+ item Indian food database with macro calculation, Apple HealthKit + Google Health Connect integration, Cloudflare Workers edge caching</li></ul>
     </div>
 </div>
 
