@@ -98,22 +98,31 @@
 
     <div class="proj">
         <div class="row"><span class="bold">InformalID &mdash; AI Financial Profiler</span><span class="italic small">Python, Claude API (tool_use), Pydantic</span></div>
-        <ul><li>Conversational AI generating financial identity cards for India's 490M informal workers via Claude <code>tool_use</code> with tool-schema forcing from <code>FinancialProfile.model_json_schema()</code> &mdash; guarantees valid JSON matching the Pydantic schema; 2026 government scheme matching (PM-SVANidhi, JAM trinity), 61 mock-based pytest tests</li></ul>
+        <ul>
+            <li>Conversational AI generating financial identity cards for India's 490M informal workers via Claude <code>tool_use</code> with tool-schema forcing from <code>FinancialProfile.model_json_schema()</code> &mdash; guarantees valid JSON matching the Pydantic schema</li>
+            <li>2026 government scheme matching (PM-SVANidhi, PM-KISAN, JAM trinity eligibility), 61 mock-based pytest tests, demo runs without an API key, architecture documented for multi-language expansion</li>
+        </ul>
     </div>
 
     <div class="proj">
         <div class="row"><span class="bold">CodeSage &mdash; 4-Agent Parallel Code Reviewer</span><span class="italic small">Python, Groq, Redis, tree-sitter</span></div>
-        <ul><li>Built 4 AI agents running in parallel via <code>asyncio.gather()</code> (BugDetector, SecurityScanner, StyleAdvisor, TestCoverage) with cross-agent proximity-based deduplication, GitHub App JWT auth (RS256 with 10-min expiry, cached installation tokens), inline comments at exact diff positions; 38 tests</li></ul>
+        <ul>
+            <li>Built 4 AI agents running in parallel via <code>asyncio.gather()</code> (BugDetector, SecurityScanner, StyleAdvisor, TestCoverage) with cross-agent proximity-based deduplication and severity-max merging</li>
+            <li>GitHub App JWT auth (RS256 with 10-min expiry, cached installation tokens), inline review comments at exact unified-diff positions, Redis-backed queue with retry logic; 38 pytest tests</li>
+        </ul>
     </div>
 
     <div class="proj">
         <div class="row"><span class="bold">DocuMind &mdash; RAG Chatbot with Citations</span><span class="italic small">Python, FastAPI, ChromaDB, Groq</span></div>
-        <ul><li>Built RAG pipeline from scratch (no LangChain): paragraph-aware chunking with 500-token buffer, MiniLM sentence-transformers embeddings, ChromaDB similarity search with per-session collection isolation, inline source citations; 44 tests, Dockerised on Hugging Face Spaces</li></ul>
+        <ul>
+            <li>Built RAG pipeline from scratch (no LangChain, no LlamaIndex): paragraph-aware chunking with 500-token buffer + overlap, MiniLM sentence-transformers embeddings, ChromaDB similarity search</li>
+            <li>Per-session collection isolation, inline source-citation rendering, confidence scoring; 44 pytest tests with full mock coverage, multi-stage Docker build deployed to Hugging Face Spaces</li>
+        </ul>
     </div>
 
     <div class="proj">
         <div class="row"><span class="bold">VitalMaa &mdash; AI Health Companion</span><span class="italic small">Flutter, Supabase, Claude API, Cloudflare</span></div>
-        <ul><li>Cross-platform Flutter app with Claude-powered multilingual AI health coach (Hindi/English/Telugu), 15+ Deno Edge Functions, 500+ item Indian food database, Apple HealthKit + Google Health Connect integration</li></ul>
+        <ul><li>Cross-platform Flutter app with Claude-powered multilingual AI health coach (Hindi / English / Telugu), 15+ Deno Edge Functions on Supabase, 500+ item Indian food database with macro calculation, Apple HealthKit + Google Health Connect integration, Cloudflare Workers edge caching</li></ul>
     </div>
 </div>
 
