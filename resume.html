@@ -103,7 +103,10 @@
 
     <div class="proj">
         <div class="row"><span class="bold">CodeSage &mdash; 4-Agent Parallel Code Reviewer</span><span class="italic small">Python, Groq, Redis, tree-sitter</span></div>
-        <ul><li>Built 4 AI agents running in parallel via <code>asyncio.gather()</code> (BugDetector, SecurityScanner, StyleAdvisor, TestCoverage) with cross-agent proximity-based deduplication, GitHub App JWT auth (RS256 with 10-min expiry, cached installation tokens), inline comments at exact diff positions; 38 tests</li></ul>
+        <ul>
+            <li>Built 4 AI agents (BugDetector, SecurityScanner, StyleAdvisor, TestCoverage) running in parallel via <code>asyncio.gather()</code> with cross-agent proximity-based deduplication</li>
+            <li>GitHub App JWT auth (RS256, 10-min expiry, cached installation tokens), inline review comments at exact unified-diff positions, Redis-backed queue with retry logic; 38 pytest tests</li>
+        </ul>
     </div>
 
     <div class="proj">
