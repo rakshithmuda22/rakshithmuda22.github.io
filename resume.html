@@ -5,35 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sai Rakshith Muda - Resume</title>
     <style>
-        @page { margin: 0.28in 0.4in; size: letter; }
+        @page { margin: 0.35in 0.45in; size: letter; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html, body { height: auto; }
         body {
             font-family: Garamond, 'Times New Roman', Georgia, serif;
-            font-size: 9.8pt;
-            line-height: 1.14;
+            font-size: 10.5pt;
+            line-height: 1.18;
             color: #1a1a1a;
             max-width: 8.5in;
             margin: 0 auto;
-            padding: 0.28in 0.4in;
+            padding: 0.35in 0.45in;
             background: #fff;
         }
         a { color: #1a1a1a; text-decoration: none; }
-        .header { text-align: center; padding-bottom: 2pt; border-bottom: 1.2pt solid #000; margin-bottom: 3pt; }
-        .header h1 { font-size: 16pt; font-weight: bold; letter-spacing: 2pt; text-transform: uppercase; margin-bottom: 0.5pt; }
-        .header .contact { font-size: 8.6pt; }
-        .section { margin-top: 3pt; }
-        .section-title { font-size: 9.5pt; font-weight: bold; text-transform: uppercase; letter-spacing: 1pt; border-bottom: 0.5pt solid #000; padding-bottom: 0.5pt; margin-bottom: 1pt; }
-        .row { display: flex; justify-content: space-between; align-items: baseline; }
+        .header { text-align: center; padding-bottom: 3pt; border-bottom: 1.2pt solid #000; margin-bottom: 5pt; }
+        .header h1 { font-size: 18pt; font-weight: bold; letter-spacing: 2.5pt; text-transform: uppercase; margin-bottom: 1pt; }
+        .header .contact { font-size: 9.5pt; }
+        .section { margin-top: 5pt; }
+        .section-title { font-size: 10.5pt; font-weight: bold; text-transform: uppercase; letter-spacing: 1pt; border-bottom: 0.6pt solid #000; padding-bottom: 1pt; margin-bottom: 2pt; }
+        .row { display: flex; justify-content: space-between; align-items: baseline; gap: 8pt; }
         .bold { font-weight: bold; }
         .italic { font-style: italic; }
-        .small { font-size: 8.8pt; }
-        ul { padding-left: 11pt; margin: 0; }
-        li { margin-bottom: 0.5pt; font-size: 9.4pt; line-height: 1.16; }
-        .skills-line { margin-bottom: 0; font-size: 9.4pt; line-height: 1.18; }
-        .proj { margin-bottom: 1.5pt; }
-        .edu-line { font-size: 8.9pt; line-height: 1.18; }
-        @media print { body { padding: 0; } .no-print { display: none !important; } @page { margin: 0.28in 0.4in; } }
+        .small { font-size: 9.5pt; white-space: nowrap; }
+        ul { padding-left: 13pt; margin: 1pt 0 0 0; }
+        li { margin-bottom: 0.5pt; font-size: 10pt; line-height: 1.2; }
+        .skills-line { margin-bottom: 0.5pt; font-size: 10pt; line-height: 1.2; }
+        .proj { margin-bottom: 3pt; }
+        .edu-line { font-size: 9.8pt; line-height: 1.2; }
+        @media print { body { padding: 0; } .no-print { display: none !important; } @page { margin: 0.35in 0.45in; } }
         .banner { text-align: center; background: #f0f4ff; padding: 4px; border-radius: 4px; margin-bottom: 6px; font-family: -apple-system, sans-serif; font-size: 11px; color: #666; }
         .banner a { color: #2563eb; }
         @media print { .banner { display: none !important; } }
@@ -45,9 +45,9 @@
 <div class="header">
     <h1>Sai Rakshith Muda</h1>
     <div class="contact">
-        <a href="mailto:rakshithmuda@gmail.com">rakshithmuda@gmail.com</a> | (814) 780-1228 |
-        <a href="https://github.com/rakshithmuda22">github.com/rakshithmuda22</a> |
-        <a href="https://rakshithmuda22.github.io">rakshithmuda22.github.io</a> |
+        <a href="mailto:rakshithmuda@gmail.com">rakshithmuda@gmail.com</a> &nbsp;|&nbsp; (814) 780-1228 &nbsp;|&nbsp;
+        <a href="https://github.com/rakshithmuda22">github.com/rakshithmuda22</a> &nbsp;|&nbsp;
+        <a href="https://rakshithmuda22.github.io">rakshithmuda22.github.io</a> &nbsp;|&nbsp;
         <a href="https://pypi.org/project/llm-agentspec/">PyPI: llm-agentspec</a>
     </div>
 </div>
@@ -58,71 +58,87 @@
         <span><span class="bold">Pennsylvania State University</span> &mdash; B.S. Computer Science, GPA: 3.48</span>
         <span class="italic small">May 2026</span>
     </div>
-    <div class="edu-line"><b>Coursework:</b> Operating Systems, Artificial Intelligence, Database Management Systems, Communication Networks, Theory of Computation, Numerical Analysis</div>
-    <div class="edu-line"><b>Study Abroad:</b> Universidad Tecnica Federico Santa Maria, Santiago, Chile (Mar 2023)</div>
+    <div class="edu-line"><b>Coursework:</b> Operating Systems, Artificial Intelligence, Database Management Systems, Communication Networks, Theory of Computation, Numerical Analysis, Discrete Mathematics</div>
+    <div class="edu-line"><b>Study Abroad:</b> Universidad Tecnica Federico Santa Maria, Santiago, Chile &mdash; Engineering research, March 2023</div>
 </div>
 
 <div class="section">
     <div class="section-title">Technical Skills</div>
     <div class="skills-line"><b>Languages:</b> Python, TypeScript, Dart, Swift, C, SQL</div>
-    <div class="skills-line"><b>AI/ML:</b> Claude API (Anthropic SDK), Groq API, LangGraph, LangChain, ChromaDB, RAG pipelines, sentence-transformers, tree-sitter</div>
-    <div class="skills-line"><b>Backend:</b> FastAPI, Flask, Supabase (PostgreSQL), Redis, MySQL, Pydantic, pytest</div>
-    <div class="skills-line"><b>Frontend/Mobile:</b> Flutter (Riverpod), React, SwiftUI, Tailwind CSS, Zustand</div>
-    <div class="skills-line"><b>Infrastructure:</b> Docker, GitHub Actions CI/CD, Cloudflare Workers, Vercel, Deno Edge Functions</div>
+    <div class="skills-line"><b>AI / LLM:</b> Claude API (Anthropic SDK, tool_use), Groq API, LangGraph, LangChain, ChromaDB, RAG pipelines, sentence-transformers, pydantic structured outputs</div>
+    <div class="skills-line"><b>Backend:</b> FastAPI, Flask, Supabase (PostgreSQL), Redis, MySQL, pytest, tree-sitter, GitHub GraphQL</div>
+    <div class="skills-line"><b>Frontend / Mobile:</b> Flutter (Riverpod), React, SwiftUI, Tailwind CSS, Zustand, Vite</div>
+    <div class="skills-line"><b>Infrastructure:</b> Docker, GitHub Actions CI/CD, Cloudflare Workers, Vercel, Deno Edge Functions, HMAC webhook signing</div>
 </div>
 
 <div class="section">
     <div class="section-title">Projects</div>
 
     <div class="proj">
-        <div class="row"><span class="bold">AgentSpec &mdash; Behavioral Contracts for LLM Agents</span><span class="italic small">Python, pytest | Published to PyPI</span></div>
-        <ul><li>Published open-source library (llm-agentspec v0.2.0) enforcing structural contracts on LLM agent tool-call sequences (must_call, must_call_before, must_not_call); fills gap where DeepEval/RAGAS grade output quality but can't do deterministic behavioral pass/fail. Zero deps, 296K ops/sec, 87 tests, Anthropic tool-use adapter + end-to-end case study</li></ul>
+        <div class="row"><span class="bold">AgentSpec &mdash; Behavioral Contracts for LLM Agents</span><span class="italic small">Python, pytest &nbsp;|&nbsp; Published to PyPI</span></div>
+        <ul>
+            <li>Published open-source library <code>llm-agentspec</code> (v0.2.0) enforcing structural contracts on LLM agent tool-call sequences (<code>must_call</code>, <code>must_call_before</code>, <code>must_not_call</code>, <code>must_call_at_most</code>); fills the gap where DeepEval/RAGAS grade output quality but can't do deterministic behavioral pass/fail</li>
+            <li>Zero runtime dependencies, 296K ops/sec, 87 pytest tests including a recorded Anthropic tool-use case study; thread-safe across 20 concurrent workers with 9&micro;s median check time</li>
+        </ul>
     </div>
 
     <div class="proj">
         <div class="row"><span class="bold">Stacktrace-to-PR Time Machine</span><span class="italic small">Python, FastAPI, GitHub GraphQL, Redis</span></div>
-        <ul><li>Built stateless service tracing Sentry errors to exact PR via GraphQL blame API, reducing triage from 15-30 min to 3 sec with AST-aware function-boundary analysis and SHA-aware Redis caching; 64 pytest tests, HMAC-verified webhooks</li></ul>
+        <ul>
+            <li>Built stateless webhook-driven service that traces Sentry errors to the exact PR that introduced the bug via GitHub GraphQL blame API &mdash; no local git clones, reducing on-call triage from 15-30 min to under 3 sec</li>
+            <li>Uses AST-aware function-boundary analysis (Python <code>ast.parse</code>) for accurate blame, SHA-aware Redis caching (30-day TTL on immutable SHAs vs short on branches), HMAC-SHA256 webhook verification; 64 pytest tests</li>
+        </ul>
     </div>
 
     <div class="proj">
         <div class="row"><span class="bold">AgentProbe &mdash; Deterministic AST PR Governance</span><span class="italic small">Python, LangGraph, FastAPI</span></div>
-        <ul><li>Built GitHub Action with LangGraph state-graph evaluating PRs against architectural boundaries (dict-based YAML rules) with weighted scoring (40/25/35) and auto-BLOCK on violations; 90 pytest tests, HMAC-SHA256 webhook verification</li></ul>
+        <ul>
+            <li>Built a GitHub Action using a LangGraph state-graph (Architecture, Pattern, Regression agents) to evaluate PRs against architectural boundaries and naming rules defined in YAML &mdash; zero LLM calls on the critical path, zero hallucinated violations</li>
+            <li>Weighted scoring (40/25/35) with short-circuit auto-BLOCK on fatal architecture violations, HMAC-SHA256 webhook verification with constant-time compare; 90 pytest tests and a hardened security posture (Layer-3 PR-code execution gated)</li>
+        </ul>
     </div>
 
     <div class="proj">
-        <div class="row"><span class="bold">InformalID &mdash; AI Financial Profiler</span><span class="italic small">Python, Claude API (tool_use), Pydantic</span></div>
-        <ul><li>Built conversational AI generating financial identity cards for India's 490M informal workers via Claude tool_use with Pydantic schema validation and 2026 government scheme matching (PM-SVANidhi, JAM trinity); 61 tests</li></ul>
+        <div class="row"><span class="bold">InformalID &mdash; AI Financial Profiler for Informal Workers</span><span class="italic small">Python, Claude API (tool_use), Pydantic</span></div>
+        <ul>
+            <li>Built conversational AI that generates financial identity cards for India's 490M informal workers via Claude <code>tool_use</code> with tool-schema forcing &mdash; guarantees structured JSON output matching a Pydantic <code>FinancialProfile</code> schema</li>
+            <li>2026 government scheme matching (PM-SVANidhi, PM-KISAN, JAM trinity eligibility), 61 mock-based pytest tests, demo runs without an API key</li>
+        </ul>
     </div>
 
     <div class="proj">
         <div class="row"><span class="bold">CodeSage &mdash; 4-Agent Parallel Code Reviewer</span><span class="italic small">Python, Groq, Redis, tree-sitter</span></div>
-        <ul><li>Built 4 AI agents running in parallel via asyncio.gather() learning repo conventions from past PRs with cross-agent deduplication, GitHub App JWT auth (RS256), and inline comments at exact diff positions; 38 tests</li></ul>
+        <ul><li>Built 4 AI agents running in parallel via <code>asyncio.gather()</code> (BugDetector, SecurityScanner, StyleAdvisor, TestCoverage) with cross-agent deduplication, GitHub App JWT auth (RS256), inline comments at exact diff positions; 38 tests</li></ul>
     </div>
 
     <div class="proj">
         <div class="row"><span class="bold">DocuMind &mdash; RAG Chatbot with Citations</span><span class="italic small">Python, FastAPI, ChromaDB, Groq</span></div>
-        <ul><li>Built RAG pipeline from scratch (no LangChain): paragraph-aware chunking, MiniLM embeddings, ChromaDB search, per-session isolation, confidence scoring; 44 tests, deployed to Hugging Face Spaces</li></ul>
+        <ul><li>Built RAG pipeline from scratch (no LangChain): paragraph-aware chunking, MiniLM embeddings, ChromaDB similarity search, per-session isolation, inline citation rendering; 44 tests, Docker deploy on Hugging Face Spaces</li></ul>
     </div>
 
     <div class="proj">
         <div class="row"><span class="bold">VitalMaa &mdash; AI Health Companion</span><span class="italic small">Flutter, Supabase, Claude API, Cloudflare</span></div>
-        <ul><li>Developed Flutter app with Claude-powered multilingual AI coach (Hindi/English/Telugu), 15+ Deno Edge Functions, 500+ Indian food DB, Apple HealthKit + Google Health Connect integration</li></ul>
+        <ul><li>Developed cross-platform Flutter app with Claude-powered multilingual AI health coach (Hindi / English / Telugu), 15+ Deno Edge Functions, 500+ item Indian food database, Apple HealthKit + Google Health Connect integration</li></ul>
     </div>
 </div>
 
 <div class="section">
     <div class="section-title">Experience</div>
-    <div class="row"><span class="bold">Mathematics Department Proctor</span><span class="italic small">Penn State University | Mar 2024 - Dec 2025</span></div>
-    <ul><li>Managed exam logistics for 500+ students/semester; verified identities and handled confidential examination materials</li></ul>
-    <div class="row"><span class="bold">Commons Desk Operations</span><span class="italic small">Penn State University | Mar 2024 - Present</span></div>
-    <ul><li>Employee of the Month; manage student information systems and enforce security protocols for residential facilities</li></ul>
+    <div class="row"><span class="bold">Mathematics Department Proctor</span><span class="italic small">Penn State University &nbsp;|&nbsp; Mar 2024 - Dec 2025</span></div>
+    <ul>
+        <li>Managed exam logistics for 500+ students per semester across multiple courses; verified identities, distributed and collected confidential examination materials, and coordinated with faculty to resolve real-time issues</li>
+    </ul>
+    <div class="row"><span class="bold">Commons Desk Operations</span><span class="italic small">Penn State University &nbsp;|&nbsp; Mar 2024 - Present</span></div>
+    <ul>
+        <li>Named <i>Employee of the Month</i>; manage student information systems and enforce security protocols for residential facilities serving 2,000+ students</li>
+    </ul>
 </div>
 
 <div class="section">
     <div class="section-title">Certifications &amp; Activities</div>
     <ul>
-        <li><b>Introduction to DevOps</b> &mdash; IBM (Coursera), Jan 2026 &nbsp;|&nbsp; <b>Claude 101</b>, <b>Claude Code in Action</b>, <b>Introduction to Agent Skills</b> &mdash; Anthropic Academy, 2026</li>
-        <li><b>Penn State Habitat for Humanity</b> &mdash; Collegiate Challenge 2024, Fort Lauderdale, FL &nbsp;|&nbsp; <b>Languages:</b> English (fluent), Hindi (native), Telugu (native)</li>
+        <li><b>Certifications:</b> Introduction to DevOps &mdash; IBM (Coursera, Jan 2026) &nbsp;&bull;&nbsp; Claude 101, Claude Code in Action, Introduction to Agent Skills &mdash; Anthropic Academy (2026)</li>
+        <li><b>Penn State Habitat for Humanity</b> &mdash; Collegiate Challenge 2024, Fort Lauderdale, FL &nbsp;&bull;&nbsp; <b>Languages:</b> English (fluent), Hindi (native), Telugu (native)</li>
     </ul>
 </div>
 
