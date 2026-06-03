@@ -724,7 +724,7 @@
         <div class="bento">
 
             <!-- AgentSpec -->
-            <div class="pCard col7 rev" data-d="0">
+            <div class="pCard col7 rev" data-d="0" data-href="https://github.com/rakshithmuda22/agentspec">
                 <div class="accentBar"></div>
                 <div class="cardNum">01</div>
                 <div class="cardTags">
@@ -741,7 +741,7 @@
             </div>
 
             <!-- AgentProbe -->
-            <div class="pCard col5 rev" data-d="100">
+            <div class="pCard col5 rev" data-d="100" data-href="https://github.com/rakshithmuda22/agentprobe">
                 <div class="accentBar"></div>
                 <div class="cardNum">02</div>
                 <div class="cardTags">
@@ -757,7 +757,7 @@
             </div>
 
             <!-- Stacktrace -->
-            <div class="pCard col5 rev" data-d="0">
+            <div class="pCard col5 rev" data-d="0" data-href="https://github.com/rakshithmuda22/stacktrace-time-machine">
                 <div class="accentBar"></div>
                 <div class="cardNum">03</div>
                 <div class="cardTags">
@@ -773,7 +773,7 @@
             </div>
 
             <!-- CodeSage -->
-            <div class="pCard col7 rev" data-d="120">
+            <div class="pCard col7 rev" data-d="120" data-href="https://github.com/rakshithmuda22/codesage">
                 <div class="accentBar"></div>
                 <div class="cardNum">04</div>
                 <div class="cardTags">
@@ -789,7 +789,7 @@
             </div>
 
             <!-- InformalID -->
-            <div class="pCard col4 rev" data-d="0">
+            <div class="pCard col4 rev" data-d="0" data-href="https://github.com/rakshithmuda22/informalid">
                 <div class="accentBar"></div>
                 <div class="cardNum">05</div>
                 <div class="cardTags">
@@ -805,7 +805,7 @@
             </div>
 
             <!-- DocuMind -->
-            <div class="pCard col4 rev" data-d="110">
+            <div class="pCard col4 rev" data-d="110" data-href="https://github.com/rakshithmuda22/Documind">
                 <div class="accentBar"></div>
                 <div class="cardNum">06</div>
                 <div class="cardTags">
@@ -821,7 +821,7 @@
             </div>
 
             <!-- VitalMaa -->
-            <div class="pCard col4 rev" data-d="220">
+            <div class="pCard col4 rev" data-d="220" data-href="https://github.com/rakshithmuda22/vitalmaa">
                 <div class="accentBar"></div>
                 <div class="cardNum">07</div>
                 <div class="cardTags">
@@ -837,7 +837,7 @@
             </div>
 
             <!-- Pizza Palace -->
-            <div class="pCard col12 rev" data-d="0">
+            <div class="pCard col12 rev" data-d="0" data-href="https://github.com/PSU-CMPSC431W/cmpsc431w-fa25-project-samuel-rakshith">
                 <div class="accentBar"></div>
                 <div class="cardNum">08</div>
                 <div class="cardTags">
@@ -1239,6 +1239,17 @@ window.addEventListener('scroll', () => {
     }, { threshold: .5 });
     document.querySelectorAll('.cnt').forEach(c => io.observe(c));
 })();
+
+/* ──────────────────────────────────────────
+   CARD CLICK → OPEN PROJECT
+────────────────────────────────────────── */
+document.querySelectorAll('.pCard[data-href]').forEach(card => {
+    card.style.cursor = 'pointer';
+    card.addEventListener('click', e => {
+        if (e.target.closest('a')) return; // let inner links handle themselves
+        window.open(card.dataset.href, '_blank', 'noopener noreferrer');
+    });
+});
 
 /* ──────────────────────────────────────────
    3D CARD TILT + SPOTLIGHT
