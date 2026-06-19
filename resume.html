@@ -11,46 +11,52 @@
         body {
             font-family: Garamond, 'Times New Roman', Georgia, serif;
             font-size: 10pt;
-            line-height: 1.2;
+            line-height: 1.25;
             color: #1a1a1a;
             max-width: 8.5in;
             margin: 0 auto;
-            padding: 0.3in 0.4in;
+            padding: 0.35in 0.45in;
             background: #fff;
         }
         a { color: #1a1a1a; text-decoration: none; }
-        .header { text-align: center; padding-bottom: 2pt; border-bottom: 1pt solid #000; margin-bottom: 2pt; }
-        .header h1 { font-size: 18pt; font-weight: bold; letter-spacing: 2.5pt; text-transform: uppercase; margin-bottom: 1pt; }
-        .header .contact { font-size: 9.3pt; }
-        .section { margin-top: 1.5pt; }
-        .section-title { font-size: 10pt; font-weight: bold; text-transform: uppercase; letter-spacing: 1pt; border-bottom: 0.5pt solid #000; padding-bottom: 0.5pt; margin-bottom: 1pt; }
+        .header { text-align: center; padding-bottom: 3pt; border-bottom: 1pt solid #000; margin-bottom: 3pt; }
+        .header h1 { font-size: 18pt; font-weight: bold; letter-spacing: 2pt; text-transform: uppercase; margin-bottom: 2pt; }
+        .header .contact { font-size: 9.3pt; line-height: 1.4; }
+        .section { margin-top: 5pt; }
+        .section-title { font-size: 10.5pt; font-weight: bold; text-transform: uppercase; letter-spacing: 1pt; border-bottom: 0.5pt solid #000; padding-bottom: 1pt; margin-bottom: 3pt; }
         .row { display: flex; justify-content: space-between; align-items: baseline; gap: 8pt; }
         .bold { font-weight: bold; }
         .italic { font-style: italic; }
-        .small { font-size: 8.8pt; white-space: nowrap; }
-        ul { padding-left: 11pt; margin: 0; }
-        li { margin-bottom: 0; font-size: 9.4pt; line-height: 1.18; }
-        .skills-line { margin-bottom: 0; font-size: 9.4pt; line-height: 1.18; }
-        .proj { margin-bottom: 0.5pt; }
-        .edu-line { font-size: 9.2pt; line-height: 1.2; }
+        .small { font-size: 9pt; }
+        ul { padding-left: 14pt; margin: 1pt 0 0 0; }
+        li { margin-bottom: 1.5pt; font-size: 9.6pt; line-height: 1.25; }
+        .skills-line { margin-bottom: 1pt; font-size: 9.6pt; line-height: 1.3; }
+        .proj { margin-bottom: 4pt; }
+        .edu-line { font-size: 9.4pt; line-height: 1.3; }
+        code { font-family: 'Courier New', monospace; font-size: 8.8pt; }
         @media print {
-        body { padding: 0.25in 0.4in !important; }
-        .no-print { display: none !important; }
-        @page { margin: 0 !important; size: letter; }
-    }
-        .banner { text-align: center; background: #f0f4ff; padding: 4px; border-radius: 4px; margin-bottom: 6px; font-family: -apple-system, sans-serif; font-size: 11px; color: #666; }
-        .banner a { color: #2563eb; }
-        @media print { .banner { display: none !important; } }
+            body { padding: 0.3in 0.45in !important; }
+            .no-print { display: none !important; }
+            @page { margin: 0 !important; size: letter; }
+        }
+        .banner { text-align: center; background: #f0f4ff; padding: 5px; border-radius: 4px; margin-bottom: 8px; font-family: -apple-system, sans-serif; font-size: 12px; color: #555; }
+        .banner a { color: #2563eb; font-weight: 600; }
     </style>
 </head>
 <body>
-<div class="banner no-print">Cmd+P > Save as PDF (uncheck "Headers and footers") &nbsp;|&nbsp; <a href="index.html">Portfolio</a></div>
+<div class="banner no-print">
+    <a href="Sai_Rakshith_Muda_Resume.pdf">Download PDF</a> &nbsp;|&nbsp;
+    Or Cmd+P &gt; Save as PDF (uncheck "Headers and footers") &nbsp;|&nbsp;
+    <a href="index.html">Back to portfolio</a>
+</div>
 
 <div class="header">
     <h1>Sai Rakshith Muda</h1>
     <div class="contact">
-        <a href="mailto:rakshithmuda@gmail.com">rakshithmuda@gmail.com</a> &nbsp;|&nbsp; (814) 780-1228 &nbsp;|&nbsp;
-        <a href="https://www.linkedin.com/in/sai-rakshith-muda-09341a1b4">linkedin.com/in/sai-rakshith-muda-09341a1b4</a> &nbsp;|&nbsp;
+        State College, PA &nbsp;|&nbsp; (814) 780-1228 &nbsp;|&nbsp;
+        <a href="mailto:rakshithmuda@gmail.com">rakshithmuda@gmail.com</a><br>
+        <a href="https://github.com/rakshithmuda22">github.com/rakshithmuda22</a> &nbsp;|&nbsp;
+        <a href="https://www.linkedin.com/in/sai-rakshith-muda-09341a1b4/">linkedin.com/in/sai-rakshith-muda-09341a1b4</a> &nbsp;|&nbsp;
         <a href="https://rakshithmuda22.github.io">rakshithmuda22.github.io</a> &nbsp;|&nbsp;
         <a href="https://pypi.org/project/llm-agentspec/">PyPI: llm-agentspec</a>
     </div>
@@ -59,76 +65,59 @@
 <div class="section">
     <div class="section-title">Education</div>
     <div class="row">
-        <span><span class="bold">Pennsylvania State University</span> &mdash; B.S. Computer Science, GPA: 3.45</span>
+        <span><span class="bold">Pennsylvania State University</span>, B.S. Computer Science, GPA 3.45</span>
         <span class="italic small">May 2026</span>
     </div>
-    <div class="edu-line"><b>Coursework:</b> Operating Systems, AI, Database Management, Communication Networks, Theory of Computation, Numerical Analysis, Discrete Math &nbsp;&bull;&nbsp; <b>Study Abroad:</b> Universidad Tecnica Federico Santa Maria, Chile (Mar 2023)</div>
+    <div class="edu-line"><b>Coursework:</b> Operating Systems, Artificial Intelligence, Database Management Systems, Communication Networks, Theory of Computation</div>
 </div>
 
 <div class="section">
     <div class="section-title">Technical Skills</div>
     <div class="skills-line"><b>Languages:</b> Python, TypeScript, Dart, Swift, C, SQL</div>
-    <div class="skills-line"><b>AI / LLM:</b> Claude API (tool_use, Anthropic SDK), Groq, LangGraph, LangChain, ChromaDB, RAG pipelines, sentence-transformers, Pydantic</div>
-    <div class="skills-line"><b>Backend:</b> FastAPI, Flask, Supabase (PostgreSQL), Redis, MySQL, pytest, tree-sitter, GitHub GraphQL, HMAC webhook signing</div>
-    <div class="skills-line"><b>Frontend / Infra:</b> Flutter (Riverpod), React, SwiftUI, Tailwind CSS, Docker, GitHub Actions CI/CD, Cloudflare Workers, Deno Edge Functions</div>
+    <div class="skills-line"><b>AI and LLM:</b> Anthropic Claude API, Groq API, LangGraph, LangChain, Retrieval-Augmented Generation (RAG), ChromaDB, sentence-transformers</div>
+    <div class="skills-line"><b>Backend:</b> FastAPI, Flask, Pydantic, Supabase, PostgreSQL, Redis, MySQL, REST APIs</div>
+    <div class="skills-line"><b>Frontend:</b> React, Flutter, SwiftUI, Tailwind CSS</div>
+    <div class="skills-line"><b>Infrastructure and DevOps:</b> Docker, GitHub Actions, CI/CD, Cloudflare Workers, Vercel, Deno</div>
+    <div class="skills-line"><b>Testing and Tools:</b> Git, pytest, asyncio, tree-sitter, Redis Queue (RQ), webhooks</div>
 </div>
 
 <div class="section">
     <div class="section-title">Projects</div>
 
     <div class="proj">
-        <div class="row"><span class="bold">AgentSpec &mdash; Behavioral Contracts for LLM Agents</span><span class="italic small">Python, pytest &nbsp;|&nbsp; Published to PyPI</span></div>
+        <div class="row"><span class="bold"><a href="https://github.com/rakshithmuda22/agentspec">AgentSpec</a></span><span class="italic small">Python, Pydantic, pytest &nbsp;|&nbsp; github.com/rakshithmuda22/agentspec</span></div>
         <ul>
-            <li>Published open-source library <code>llm-agentspec</code> v0.2.0 enforcing structural contracts on LLM agent tool-call sequences (<code>must_call</code>, <code>must_call_before</code>, <code>must_not_call</code>) &mdash; fills the gap where DeepEval/RAGAS grade output quality but can't do deterministic pass/fail</li>
-            <li>Zero runtime dependencies, 296K ops/sec, 87 pytest tests including a recorded Anthropic tool-use case study; thread-safe across 20 concurrent workers with 9&micro;s median check time</li>
+            <li>A <code>pip</code>-installable library (<code>pip install llm-agentspec</code>) that checks whether an LLM agent called the right tools in the right order, using rules such as <code>must_call</code>, <code>must_call_before</code>, and <code>must_not_call</code>. It gives a deterministic pass or fail on agent behavior, which output-grading tools like DeepEval and RAGAS do not.</li>
+            <li>Runs offline in Python with no API keys. A framework-agnostic <code>AgentSession</code> reads traces from Anthropic <code>tool_use</code> blocks, and one <code>assert_all_pass()</code> call drops the checks into an existing pytest suite for CI. Covered by 87 tests.</li>
         </ul>
     </div>
 
     <div class="proj">
-        <div class="row"><span class="bold">Stacktrace-to-PR Time Machine</span><span class="italic small">Python, FastAPI, GitHub GraphQL, Redis</span></div>
+        <div class="row"><span class="bold"><a href="https://github.com/rakshithmuda22/agentprobe">AgentProbe</a></span><span class="italic small">Python, LangGraph, FastAPI &nbsp;|&nbsp; github.com/rakshithmuda22/agentprobe</span></div>
         <ul>
-            <li>Built stateless webhook service tracing Sentry errors to the exact PR that introduced the bug via GitHub GraphQL blame API &mdash; reduced on-call triage from 15-30 min to under 3 sec with AST-aware function-boundary analysis</li>
-            <li>SHA-aware Redis caching (30-day TTL on immutable SHAs, short on branches), HMAC-SHA256 webhook verification with constant-time compare, Slack Block Kit delivery; 64 pytest tests, fully stateless (no local git clones)</li>
+            <li>A GitHub Action that reviews pull requests against a team's architectural boundaries and naming rules using three LangGraph-orchestrated agents (Architecture, Pattern, Regression), and blocks the merge when a boundary is crossed.</li>
+            <li>Regression detection runs in two layers, Logic Summary Diffing and Property-Based Testing, with weighted scoring. Backed by 90 tests including HMAC-SHA256 webhook verification; teams set boundaries and forbidden patterns in YAML.</li>
         </ul>
     </div>
 
     <div class="proj">
-        <div class="row"><span class="bold">AgentProbe &mdash; Deterministic AST PR Governance</span><span class="italic small">Python, LangGraph, FastAPI</span></div>
+        <div class="row"><span class="bold"><a href="https://github.com/rakshithmuda22/codesage">CodeSage</a></span><span class="italic small">Python, FastAPI, Groq, Redis &nbsp;|&nbsp; github.com/rakshithmuda22/codesage</span></div>
         <ul>
-            <li>Built GitHub Action using a LangGraph state-graph (Architecture, Pattern, Regression agents) evaluating PRs against YAML-defined boundaries &mdash; zero LLM calls on the critical path, zero hallucinated violations</li>
-            <li>Weighted scoring (40/25/35) with short-circuit auto-BLOCK on fatal architecture violations, HMAC-SHA256 webhook verification, hardened security posture (Layer-3 PR-code execution gated); 90 pytest tests</li>
+            <li>Four agents (BugDetector, SecurityScanner, StyleAdvisor, TestCoverage) review a pull request in parallel with <code>asyncio.gather()</code> and post inline comments at exact diff positions on GitHub. StyleAdvisor checks code against each repo's own conventions, learned from its last three merged PRs, and parses source with tree-sitter across Python, JavaScript, and TypeScript. 38 tests.</li>
         </ul>
     </div>
 
     <div class="proj">
-        <div class="row"><span class="bold">InformalID &mdash; AI Financial Profiler</span><span class="italic small">Python, Claude API (tool_use), Pydantic</span></div>
+        <div class="row"><span class="bold"><a href="https://github.com/rakshithmuda22/stacktrace-time-machine">Stacktrace-to-PR Time Machine</a></span><span class="italic small">Python, FastAPI, GitHub GraphQL, Redis</span></div>
         <ul>
-            <li>Conversational AI generating financial identity cards for India's 490M informal workers via Claude <code>tool_use</code> with tool-schema forcing from <code>FinancialProfile.model_json_schema()</code> &mdash; guarantees valid JSON matching the Pydantic schema</li>
-            <li>2026 government scheme matching (PM-SVANidhi, PM-KISAN, JAM trinity eligibility rules), warm structured-interview flow across 7 questions, 61 mock-based pytest tests; demo runs without an API key</li>
+            <li>A stateless webhook service that takes a Sentry error and traces it back to the pull request that introduced the bug, using GitHub's GraphQL blame API with no local git clones. Queries pin to the deployed release SHA so line numbers do not drift, and it blames the whole enclosing function by parsing Python with <code>ast</code>. 64 tests. <a href="https://github.com/rakshithmuda22/stacktrace-time-machine">github.com/rakshithmuda22/stacktrace-time-machine</a></li>
         </ul>
     </div>
 
     <div class="proj">
-        <div class="row"><span class="bold">CodeSage &mdash; 4-Agent Parallel Code Reviewer</span><span class="italic small">Python, Groq, Redis, tree-sitter</span></div>
+        <div class="row"><span class="bold"><a href="https://github.com/rakshithmuda22/Documind">DocuMind</a></span><span class="italic small">Python, FastAPI, ChromaDB, Groq &nbsp;|&nbsp; github.com/rakshithmuda22/Documind</span></div>
         <ul>
-            <li>Built 4 AI agents (BugDetector, SecurityScanner, StyleAdvisor, TestCoverage) running in parallel via <code>asyncio.gather()</code> with cross-agent proximity-based deduplication</li>
-            <li>GitHub App JWT auth (RS256, 10-min expiry, cached installation tokens), inline review comments at exact unified-diff positions, Redis-backed queue with retry logic; 38 pytest tests</li>
-        </ul>
-    </div>
-
-    <div class="proj">
-        <div class="row"><span class="bold">DocuMind &mdash; RAG Chatbot with Citations</span><span class="italic small">Python, FastAPI, ChromaDB, Groq</span></div>
-        <ul>
-            <li>Built RAG pipeline from scratch (no LangChain, no LlamaIndex): paragraph-aware chunking with 500-token buffer + overlap, MiniLM sentence-transformers embeddings, ChromaDB similarity search</li>
-            <li>Per-session collection isolation, inline source-citation rendering, confidence scoring from retrieval distances; 44 pytest tests with full mock coverage, multi-stage Dockerfile deployed to Hugging Face Spaces</li>
-        </ul>
-    </div>
-
-    <div class="proj">
-        <div class="row"><span class="bold">VitalMaa &mdash; AI Health Companion</span><span class="italic small">Flutter, Supabase, Claude API, Cloudflare</span></div>
-        <ul>
-            <li>Cross-platform Flutter app with Claude-powered multilingual AI health coach (Hindi / English / Telugu), 15+ Deno Edge Functions on Supabase, Cloudflare Workers edge caching</li>
-            <li>500+ item Indian food database with macro calculation, Apple HealthKit + Google Health Connect integration, Riverpod state management, production-signed Android APK (.apk &lt; 200 MB)</li>
+            <li>A retrieval-augmented generation chatbot that answers questions over uploaded PDFs and cites its sources, using PyMuPDF parsing, all-MiniLM-L6-v2 embeddings, ChromaDB search, and Groq LLaMA 3.1. Containerized with Docker for Hugging Face Spaces; LLM calls are mocked so the 44 tests run in CI without keys.</li>
         </ul>
     </div>
 </div>
@@ -136,27 +125,22 @@
 <div class="section">
     <div class="section-title">Experience</div>
     <div class="row"><span class="bold">Mathematics Department Proctor</span><span class="italic small">Penn State University &nbsp;|&nbsp; Mar 2024 - Dec 2025</span></div>
-    <ul><li>Managed exam logistics for 500+ students per semester across 8+ faculty members; verified identities, handled confidential examination materials, and resolved time-sensitive issues (accommodations, make-ups) while maintaining FERPA compliance</li></ul>
+    <ul><li>Ran exam logistics and kept testing environments secure; verified student identities and handled confidential examination materials.</li></ul>
     <div class="row"><span class="bold">Commons Desk Operations</span><span class="italic small">Penn State University &nbsp;|&nbsp; Mar 2024 - Apr 2026</span></div>
-    <ul><li>Named <i>Employee of the Month</i>; manage student information systems, train new hires on incident-reporting procedures, and enforce security protocols for residential facilities serving 2,000+ students</li></ul>
+    <ul><li>Earned Employee of the Month recognition. Managed student information systems and followed campus security and check-in procedures at a residence-hall front desk.</li></ul>
 </div>
 
 <div class="section">
     <div class="section-title">Certifications</div>
     <ul>
-        <li><b>Introduction to DevOps</b> &mdash; IBM (Coursera)</li>
-        <li><b>Getting Started with Git and GitHub</b> &mdash; IBM (Coursera)</li>
-        <li><b>Claude 101</b>, <b>Claude Code in Action</b>, <b>Introduction to Agent Skills</b>, <b>AI Fluency: Frameworks and Foundations</b> &mdash; Anthropic Academy (Skilljar)</li>
+        <li><b>Introduction to DevOps</b>, IBM (Coursera), Jan 2026 (credential verifiable on Coursera)</li>
+        <li><b>Claude 101</b>, <b>Claude Code in Action</b>, and <b>Introduction to Agent Skills</b>, Anthropic Academy, 2026</li>
     </ul>
 </div>
 
 <div class="section">
-    <div class="section-title">Leadership &amp; Activities</div>
-    <ul>
-        <li><b>Penn State Habitat for Humanity</b> &mdash; Collegiate Challenge 2024, Fort Lauderdale, FL. Collaborated with diverse teams to construct homes for 120 families during a week-long build trip</li>
-        <li><b>Open Source:</b> maintain <code>llm-agentspec</code> on PyPI (v0.2.0); 7 public repos on GitHub with full CI/CD and 400+ pytest tests &nbsp;&bull;&nbsp; <b>Interests:</b> AI agent systems, developer tools, distributed systems</li>
-        <li><b>Languages:</b> English (fluent), Hindi (native), Telugu (native)</li>
-    </ul>
+    <div class="section-title">Languages</div>
+    <div class="skills-line">English (fluent), Hindi (native), Telugu (native)</div>
 </div>
 
 </body>
